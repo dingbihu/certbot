@@ -482,6 +482,9 @@ def _init_le_client(config, authenticator, installer):
         #crypto_util.validate_key_csr(acc.key)
     else:
         acc, acme = None, None
+    if sys.version_info[:2] == (3, 3):
+        logger.warning("Python 3.3 support will be dropped in the next release "
+                    "of Certbot - please upgrade your Python version.")
 
     return client.Client(config, acc, authenticator, installer, acme=acme)
 

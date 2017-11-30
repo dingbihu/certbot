@@ -1,6 +1,7 @@
 """Certbot client API."""
 import logging
 import os
+import sys
 import platform
 
 from cryptography.hazmat.backends import default_backend
